@@ -1,29 +1,18 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { ItemSideBar } from './ItemSideBar'
+import { fetch } from '../actions/banks';
+
 
 export const SideBar = () => {
-    const items = [
-        {
-            "id": 1,
-            "name": "Quinn Wiley",
-            "bank": 4
-        },
-        {
-            "id": 2,
-            "name": "Josiah Montgomery",
-            "bank": 2
-        },
-        {
-            "id": 3,
-            "name": "Hedley Todd",
-            "bank": 2
-        },
-        {
-            "id": 4,
-            "name": "Victor Boone",
-            "bank": 4
-        }
-    ]
+
+    const state = useSelector(state => state.banks)
+    const { data } = state;
+    let banks=[];
+    if(data){
+         banks = data.results ? [...data.results] : [];
+    }
+
     const handleEmployees = (e) => {
         console.log('employee: ', e);
     }
@@ -36,8 +25,8 @@ export const SideBar = () => {
             </div>
             <div className='items'>
                 {
-                    items.map((item) => (
-                        <ItemSideBar key={item.id} item={item} click={handleEmployees} />
+                    banks.map((item) => (
+                        <ItemSideBar key={item.id} item={item} click={(e) => handleEmployees()} />
                     ))
                 }
             </div>
