@@ -1,5 +1,10 @@
+
 .bank__main-container{
     display: flex;
+
+    >.main{
+        width: 100%;
+    }
 }
 
 .bank__main-dashboard{
