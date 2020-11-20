@@ -14,7 +14,7 @@ function* performFetch(action) {
         console.log('calling');
         yield put(bank.starts());
 
-        const response = yield call(service.getBanks);
+        const response = yield call(service.getBranches);
         yield put(bank.success(response));
     } catch (error) {
         yield put(bank.fails({

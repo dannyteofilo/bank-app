@@ -4,7 +4,7 @@ import Http from './HttpService';
 
 class BankService {
 
-    getBanks() {
+    getBranches() {
         return Http.request(`/branches`);
     }
 
