@@ -8,6 +8,11 @@
 }
 
 .bank__main-dashboard{
-    display: flex;
+    display: flex;    
     flex-direction: column;
+
+    >.add{
+        width: 90%;
+        text-align: right;
+    }
 }

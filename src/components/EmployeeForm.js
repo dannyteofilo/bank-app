@@ -1,7 +1,7 @@
 import React from 'react'
 import {useForm} from '../hooks/useForm';
 
-export const EmployeForm = () => {
+export const EmployeeForm = () => {
 
     const [formValues, handleInputChange] = useForm({
         name: '',
@@ -24,8 +24,9 @@ export const EmployeForm = () => {
             <div className='form-group'>
                 <input
                     type='text'
-                    placeholder='Name'
+                    placeholder='Name'                    
                     name='name'
+                    className='form-control'
                     autoComplete='off'
                     value={name}
                     onChange={handleInputChange}
@@ -36,6 +37,7 @@ export const EmployeForm = () => {
                     type='text'
                     placeholder='Middle Name'
                     name='middle_name'
+                    className='form-control'
                     autoComplete='off'
                     value={middle_name}
                     onChange={handleInputChange}
@@ -46,6 +48,7 @@ export const EmployeForm = () => {
                     type='text'
                     placeholder='Last Name'
                     name='last_name'
+                    className='form-control'
                     autoComplete='off'
                     value={last_name}
                     onChange={handleInputChange}
@@ -56,6 +59,7 @@ export const EmployeForm = () => {
                     type='text'
                     placeholder='Branch'
                     name='branch'
+                    className='form-control'
                     autoComplete='off'
                     value={branch}
                     onChange={handleInputChange}
