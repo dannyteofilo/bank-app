@@ -33,3 +33,9 @@ html, body{
         background-color:  lighten($color: $primary, $amount: 15);        
     }
 }
+
+.navbar{
+    background-color: $primary!important;
+    color: white;
+    height: 100px;
+}
