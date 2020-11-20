@@ -31,7 +31,11 @@ html, body{
 .link{
     &:hover{
         background-color:  lighten($color: $primary, $amount: 15);        
-    }
+    }    
+}
+
+.active{
+    background-color:  lighten($color: $primary, $amount: 10);        
 }
 
 .navbar{
