@@ -4,7 +4,19 @@ import { BankApp } from './BankApp';
 import './styles/styles.scss';
 
 
-ReactDOM.render(
-   <BankApp/>,
-  document.getElementById('root')
-);
+import configureStore from './store/store';
+
+
+async function init() {
+  console.log('Waiting for store')
+
+  await configureStore();
+
+  console.log('Store was fully loaded')
+
+  ReactDOM.render(<BankApp />, document.getElementById('root'));
+
+  console.log('Rendering');
+}
+
+init();

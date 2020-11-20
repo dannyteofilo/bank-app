@@ -1,4 +1,5 @@
 
+
 const proxy = 'https://cors-anywhere.herokuapp.com/';
 const urlApi = 'https://tryouts-cumplo.herokuapp.com';
 
@@ -8,7 +9,7 @@ class Http {
     constructor() { }
 
     request(url, config = {}) {
-        return fetch(proxy + `${urlApi}${url}`)
+        return fetch(proxy + `${urlApi}${url}`, config)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -18,7 +19,6 @@ class Http {
                 console.warn(error)
                 return error;
             });
-        return this.axios.request(config);
     }
 
 }

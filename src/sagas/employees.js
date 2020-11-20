@@ -5,7 +5,7 @@ import {
 } from 'redux-saga/effects';
 
 import service from '../services/banks';
-import * as bank from '../actions/banks';
+import * as bank from '../actions/employees';
 import { types } from '../types/types';
 
 function* performFetch(action) {
@@ -13,7 +13,7 @@ function* performFetch(action) {
     try {
         yield put(bank.starts());
 
-        const response = yield call(service.getBranches);
+        const response = yield call(service.getEmployees,action.payload);
         yield put(bank.success(response));
     } catch (error) {
         yield put(bank.fails({
@@ -25,5 +25,5 @@ function* performFetch(action) {
 }
 
 export default function* watchFetch() {
-    yield takeLatest(types.bank_request_fetch, performFetch);
+    yield takeLatest(types.employee_request_fetch, performFetch);
 }

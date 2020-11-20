@@ -10,7 +10,7 @@ export const ItemSideBar = (props) => {
     const { current } = state
 
     const handleCkick = () => {
-        props.click(bank)
+        props.click(id)
         dispatch(currentBank(id));
     }
 

@@ -5,10 +5,10 @@ import { fetch } from '../actions/banks';
 import { Loading } from './Loading';
 
 
-export const SideBar = () => {
+export const SideBar = (props) => {
 
     const state = useSelector(state => state.banks)
-    const { data, requesting } = state;
+    const { data } = state;
     let banks = [];
     if (data) {
         banks = data.results ? [...data.results] : [];
@@ -16,6 +16,8 @@ export const SideBar = () => {
 
     const handleEmployees = (e) => {
         console.log('employee: ', e);
+        props.click(e);
+        
     }
     return (
         <div className='sideBar__container'>
@@ -27,15 +29,10 @@ export const SideBar = () => {
             <div className='items'>
                 {
                     banks.map((item) => (
-                        <ItemSideBar key={item.id} item={item} click={(e) => handleEmployees()} />
+                        <ItemSideBar key={item.id} item={item} click={handleEmployees} />
                     ))
                 }
             </div>
-
-            {
-                (requesting) &&
-                <Loading />
-            }
         </div>
     )
 }
