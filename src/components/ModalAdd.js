@@ -7,7 +7,7 @@ export const ModalAdd = () => {
             <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 Add
             </button>
-            <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">

@@ -1,13 +1,21 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { currentBank } from '../actions/currentBank';
 
 export const ItemSideBar = (props) => {
     const { id, name, bank } = props.item;
-    let active=false;
+    const dispatch = useDispatch();
+
+    const state = useSelector(state => state.currentBank)
+    const { current } = state
+
     const handleCkick = () => {
-        props.click(bank,id)
+        props.click(bank)
+        dispatch(currentBank(id));
     }
+
     return (
-        <div className={active ? styles['row mt-5 pointer link active']:['row mt-5 pointer link']}  onClick={handleCkick}>
+        <div className={current === id ? ['row mt-5 pointer link active'] : ['row mt-5 pointer link']} onClick={handleCkick}>
             <div className='col-1'>
                 <i className="fas fa-coins"></i>
             </div>
