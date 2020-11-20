@@ -2,15 +2,16 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ItemSideBar } from './ItemSideBar'
 import { fetch } from '../actions/banks';
+import { Loading } from './Loading';
 
 
 export const SideBar = () => {
 
     const state = useSelector(state => state.banks)
-    const { data } = state;
-    let banks=[];
-    if(data){
-         banks = data.results ? [...data.results] : [];
+    const { data, requesting } = state;
+    let banks = [];
+    if (data) {
+        banks = data.results ? [...data.results] : [];
     }
 
     const handleEmployees = (e) => {
@@ -30,6 +31,11 @@ export const SideBar = () => {
                     ))
                 }
             </div>
+
+            {
+                (requesting) &&
+                <Loading />
+            }
         </div>
     )
 }
