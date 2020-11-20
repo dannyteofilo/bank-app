@@ -9,4 +9,5 @@ export const types = {
     bank_request_ends: 'bank_request_ends',
     bank_request_failed: 'bank_request_failed',
     bank_request_success: 'bank_request_success',
+    bank_request_fetch: 'bank_request_fetch',
 }
