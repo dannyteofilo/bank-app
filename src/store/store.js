@@ -9,7 +9,7 @@ import rootSaga from './rootSaga';
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
 const reducers = combineReducers({
-    currentBank: currentBranchReducer,
+    currentBranch: currentBranchReducer,
     branchs: branchsReducer,
     employees: EmployeeReducer,
 })

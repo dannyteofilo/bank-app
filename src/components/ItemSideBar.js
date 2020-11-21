@@ -6,7 +6,7 @@ export const ItemSideBar = (props) => {
     const { id, name, bank } = props.item;
     const dispatch = useDispatch();
 
-    const state = useSelector(state => state.currentBank)
+    const state = useSelector(state => state.currentBranch)
     const { current } = state
 
     const handleCkick = () => {
