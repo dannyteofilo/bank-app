@@ -1,0 +1,18 @@
+
+.bank__main-container{
+    display: flex;
+
+    >.main{
+        width: 100%;
+    }
+}
+
+.bank__main-dashboard{
+    display: flex;    
+    flex-direction: column;
+
+    >.add{
+        width: 90%;
+        text-align: right;
+    }
+}
