@@ -4,7 +4,7 @@ import { NavBar } from '../components/NavBar'
 import { SideBar } from '../components/SideBar'
 import { Table } from '../components/Table'
 import { useDispatch } from 'react-redux'
-import { fetch } from '../actions/banks';
+import { fetch } from '../actions/branchs';
 import { fetchEmployees } from '../actions/employees'
 import { Loading } from '../components/Loading'
 

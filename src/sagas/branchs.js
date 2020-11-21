@@ -5,7 +5,7 @@ import {
 } from 'redux-saga/effects';
 
 import service from '../services/banks';
-import * as bank from '../actions/banks';
+import * as bank from '../actions/branchs';
 import { types } from '../types/types';
 
 function* performFetch(action) {

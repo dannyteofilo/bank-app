@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { currentBank } from '../actions/currentBank';
+import { currentBranch } from '../actions/currentBranch';
 
 export const ItemSideBar = (props) => {
     const { id, name, bank } = props.item;
@@ -11,7 +11,7 @@ export const ItemSideBar = (props) => {
 
     const handleCkick = () => {
         props.click(id)
-        dispatch(currentBank(id));
+        dispatch(currentBranch({id,name}));
     }
 
     return (

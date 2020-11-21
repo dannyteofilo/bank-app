@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 export const Loading = () => {
     const state = useSelector(state => state)
-    const { requesting: requestBranchs } = state.banks;
+    const { requesting: requestBranchs } = state.branchs;
     const { requesting: requestEmployees } = state.employees;
     return (
         <div className="progress-loader">

@@ -1,13 +1,11 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ItemSideBar } from './ItemSideBar'
-import { fetch } from '../actions/banks';
-import { Loading } from './Loading';
 
 
 export const SideBar = (props) => {
 
-    const state = useSelector(state => state.banks)
+    const state = useSelector(state => state.branchs)
     const { data } = state;
     let banks = [];
     if (data) {

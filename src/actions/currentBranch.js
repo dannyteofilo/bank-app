@@ -1,8 +1,9 @@
 import { types } from "../types/types"
 
-export const currentBank = (id) => ({
+export const currentBranch = (current) => ({
     type: types.set_current_bank,
     payload: {
-        id,
+        id:current.id,
+        title:current.name
     }
 });

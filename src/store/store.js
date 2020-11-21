@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import { bankReducer } from '../reducers/banks';
+import { branchsReducer } from '../reducers/branchs';
 import { EmployeeReducer } from '../reducers/employees';
-import { currentBankReducer } from '../reducers/currentBank';
+import { currentBranchReducer } from '../reducers/currentBranch';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './rootSaga';
 
@@ -9,8 +9,8 @@ import rootSaga from './rootSaga';
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
 const reducers = combineReducers({
-    currentBank: currentBankReducer,
-    banks: bankReducer,
+    currentBank: currentBranchReducer,
+    branchs: branchsReducer,
     employees: EmployeeReducer,
 })
 

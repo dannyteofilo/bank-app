@@ -1,10 +1,10 @@
 import { fork,all } from 'redux-saga/effects';
-import banks from '../sagas/banks';
+import branchs from '../sagas/branchs';
 import employees from '../sagas/employees';
 
 export default function* rootSaga() {
     yield all([
-        fork(banks),
+        fork(branchs),
         fork(employees),
     ]);
 }

@@ -8,7 +8,7 @@ const initialState = {
 
 
 
-export const bankReducer = (state = initialState, action) => {
+export const branchsReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case types.bank_request_start:
