@@ -1,7 +1,9 @@
 import React from 'react'
-import {EmployeeForm} from './EmployeeForm';
+import { EmployeeForm } from './EmployeeForm';
+
 
 export const ModalAdd = () => {
+
     return (
         <div className='container'>
             <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -12,7 +14,7 @@ export const ModalAdd = () => {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="exampleModalLabel">Add Employee</h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <button id='myCheck' type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>

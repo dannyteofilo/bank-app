@@ -17,4 +17,14 @@ export const types = {
     employee_request_failed: 'employee_request_failed',
     employee_request_success: 'employee_request_success',
     employee_request_fetch: 'employee_request_fetch',
+
+
+    // add employee
+    employee_post_start: 'employee_post_start',
+    employee_post_ends: 'employee_post_ends',
+    employee_post_failed: 'employee_post_failed',
+    employee_post_success: 'employee_post_success',
+    employee_post_reset:'employee_post_reset',
+    employee_post_fetch: 'employee_post_fetch',
+    
 }

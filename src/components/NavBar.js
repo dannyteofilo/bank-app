@@ -10,8 +10,8 @@ export const NavBar = () => {
     return (
         <div>
             <nav className="navbar navbar-dark">
-                <a className="navbar-brand" href="#">{current ? current.title : titleDefault}</a>
-                <a className="navbar-brand" href="#">{moment(date).format("MMM Do YY")}</a>
+                <p className="navbar-brand">{current ? current.title : titleDefault}</p>
+                <p className="navbar-brand">{moment(date).format("MMM Do YY")}</p>
             </nav>
         </div>
     )
