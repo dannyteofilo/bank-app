@@ -12,7 +12,7 @@ export const NavBar = () => {
             <nav className="navbar navbar-dark">
                 <p className="navbar-brand">{current ? current.title : titleDefault}</p>
                 <div className='col-5'>
-                <a className="navbar-brand" href="https://github.com/dannyteofilo/bank-app"><i class="fab fa-github">Source code</i></a>
+                <a className="navbar-brand" href="https://github.com/dannyteofilo/bank-app"><i className="fab fa-github">Source code</i></a>
                 <p className="navbar-brand">{moment(date).format("MMM Do YY")}</p>
                 </div>
             </nav>

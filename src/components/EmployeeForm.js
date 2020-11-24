@@ -1,25 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from '../hooks/useForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchEmployee, resetForm } from '../actions/addEmployee';
 
 
-export const EmployeeForm = () => {
-    let options = [];
-    const dispatch = useDispatch();
+export const EmployeeForm = (props) => {
 
+    const [options, setOpions] = useState([]);
+    const dispatch = useDispatch();
     const state = useSelector(state => state)
 
     const { data } = state.branchs;
     const { name: name_error, middle_name: middle_name_error, last_name: last_name_error, branch: branch_error, id } = state.addEmployee;
-
-    console.log(name_error, middle_name_error, last_name_error, branch_error);
-
-    if (data) {
-        options = data.results ? [...data.results] : [];
-    }
-
-    console.log('options: ', options);
 
     const [formValues, handleInputChange, reset] = useForm({
         name: '',
@@ -30,10 +22,27 @@ export const EmployeeForm = () => {
 
     const { name, middle_name, last_name, branch } = formValues;
 
+    useEffect(() => {
+        console.log('unmount');
+        return () => {
+            dispatch(resetForm());
+            reset();
+        };
+    }, []);
+
+    useEffect(() => {
+        const opt = data.results ? [...data.results] : [];
+        setOpions(opt);
+    }, [data]);
+
+
     const handleAdd = (e) => {
         e.preventDefault();
-        dispatch(resetForm());
-        dispatch(fetchEmployee({ ...formValues }))
+        if (!id) {
+            dispatch(fetchEmployee({ ...formValues }))
+        } else {
+            props.close();
+        }
     }
 
     const handleSelect = (e) => {
@@ -101,12 +110,12 @@ export const EmployeeForm = () => {
                     {
                         (id) &&
                         <div className='success'>
-                            <span>Post sucessfully</span>
+                            <span>Employee added successfully</span>
                         </div>
                     }
                 </div>
                 <div className='form-group'>
-                    <button type='submit' className='btn btn-primary mb-2'>Submit</button>
+                    <button type='submit' className='btn btn-primary mb-2'>{!id ? 'Submit' : 'Ok'}</button>
                 </div>
 
             </form>
