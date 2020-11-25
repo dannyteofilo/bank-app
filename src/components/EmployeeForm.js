@@ -11,9 +11,9 @@ export const EmployeeForm = (props) => {
     const state = useSelector(state => state)
 
     const { data } = state.branchs;
-    const { name: name_error, middle_name: middle_name_error, last_name: last_name_error, branch: branch_error, id } = state.addEmployee;
+    const { name: name_error, middle_name: middle_name_error, last_name: last_name_error, branch: branch_error, requesting, id } = state.addEmployee;
 
-    const [formValues, handleInputChange, reset] = useForm({
+    const [formValues, handleInputChange] = useForm({
         name: '',
         middle_name: '',
         last_name: '',
@@ -23,18 +23,17 @@ export const EmployeeForm = (props) => {
     const { name, middle_name, last_name, branch } = formValues;
 
     useEffect(() => {
-        console.log('unmount');
         return () => {
             dispatch(resetForm());
-            reset();
-        };
-    }, []);
+        }
+    }, [dispatch]);
 
     useEffect(() => {
-        const opt = data.results ? [...data.results] : [];
-        setOpions(opt);
+        if (data) {
+            const opt = data.results ? [...data.results] : [];
+            setOpions(opt);
+        }
     }, [data]);
-
 
     const handleAdd = (e) => {
         e.preventDefault();
@@ -115,7 +114,13 @@ export const EmployeeForm = (props) => {
                     }
                 </div>
                 <div className='form-group'>
-                    <button type='submit' className='btn btn-primary mb-2'>{!id ? 'Submit' : 'Ok'}</button>
+                    <button type='submit' disabled={requesting} className='btn btn-primary mb-2'>
+                        {requesting
+                            ? <div className="spinner-border text-light spinner-border-sm" role="status">
+                                <span className="sr-only">Loading...</span>
+                            </div>
+                            : !id ? 'Submit' : 'Ok'}
+                    </button>
                 </div>
 
             </form>

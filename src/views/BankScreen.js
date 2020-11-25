@@ -10,11 +10,11 @@ import { Loading } from '../components/Loading'
 
 export const BankScreen = () => {
     const dispatch = useDispatch();
-    dispatch(fetch())
+    // dispatch(fetch())
 
 
     const handleChooseBranch = (e) => {
-        dispatch(fetchEmployees(e))
+        // dispatch(fetchEmployees(e))
     }
 
     return (
